@@ -1,5 +1,6 @@
 package com.czm.demo;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ import com.czm.xchttpclient.XCHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private Context mContext;
     private TextView mResult;
