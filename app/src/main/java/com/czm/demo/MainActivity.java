@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_get_string).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url  ="https://raw.githubusercontent.com/jczmdeveloper/XCSlideView/master/jsondata.txt";
+                String url  ="https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/master/data/jsondata.txt";
                 for(int i = 0; i < 1;i++){
                     XCHttpClient.getInstance().get(url, null, new TextResponseCallback() {
                         @Override
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_get_Json).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url  ="https://raw.githubusercontent.com/jczmdeveloper/XCSlideView/master/jsondata.txt";
+                String url  ="https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/master/data/jsondata.txt";
                 for(int i = 0; i < 1;i++){
                     XCHttpClient.getInstance().get(url, null, new JsonResponseCallback<MyJsonData>() {
 
