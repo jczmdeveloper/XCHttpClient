@@ -7,7 +7,7 @@ import java.io.InputStream;
  */
 public abstract class TextResponseCallback implements ResponseCallback{
     @Override
-    public void onFilure(Request request,Exception result) {
+    public void onFailure(Request request, Exception result) {
 
     }
     public abstract void onSuccess(Request request,String result);

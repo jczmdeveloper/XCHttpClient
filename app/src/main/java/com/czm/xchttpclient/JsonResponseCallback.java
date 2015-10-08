@@ -27,12 +27,12 @@ public abstract class JsonResponseCallback<T> extends TextResponseCallback{
             }
         }catch (Exception e){
             e.printStackTrace();
-            onFilure(request,e);
+            onFailure(request, e);
         }
     }
 
     @Override
-    public void onFilure(Request request,Exception result) {
-        super.onFilure(request,result);
+    public void onFailure(Request request, Exception result) {
+        super.onFailure(request, result);
     }
 }

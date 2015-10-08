@@ -60,13 +60,13 @@ public class Request implements Runnable{
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
-            mCallback.onFilure(this,e);
+            mCallback.onFailure(this, e);
         } catch (ProtocolException e) {
             e.printStackTrace();
-            mCallback.onFilure(this,e);
+            mCallback.onFailure(this, e);
         } catch (IOException e) {
             e.printStackTrace();
-            mCallback.onFilure(this,e);
+            mCallback.onFailure(this, e);
         }
     }
     public String getMethod() {
