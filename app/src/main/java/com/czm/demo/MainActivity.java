@@ -58,7 +58,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void getBinaryData() {
-        String url  ="http://i5.download.fd.pchome.net/g1/M00/11/0E/oYYBAFX7zvGIW1NkAANru6u7_vwAACsaAKUVYkAA2vT184.jpg";
+        String url  ="https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/master/screenshots/img1080_1920.jpg";
         XCHttpClient.getInstance().get(url, null, new BinaryResponseCallback() {
             @Override
             public void onSuccess(Request request,   final byte[] binaryData) {
