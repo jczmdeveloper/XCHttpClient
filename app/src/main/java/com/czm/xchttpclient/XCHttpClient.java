@@ -1,4 +1,5 @@
 package com.czm.xchttpclient;
+import android.content.Context;
 import android.util.Log;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -30,6 +31,10 @@ public class XCHttpClient {
     public void post(String strUrl,RequestParams params,
                      ResponseCallback callback){
         sendRequest("POST", strUrl,getUrlWithQueryString(true, "", params), callback);
+    }
+    public void download(String strUrl,RequestParams params,
+                    ResponseCallback callback){
+        sendRequest("GET", getUrlWithQueryString(true, strUrl, null),null, callback);
     }
     private void sendRequest(String method,String strUrl,String postParams, ResponseCallback callback) {
         Request request = new Request(method,strUrl,null,callback);

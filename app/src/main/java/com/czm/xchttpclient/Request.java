@@ -19,6 +19,7 @@ public class Request implements Runnable{
     protected String mUrl;
     protected String mPostParams;
     protected ResponseCallback mCallback;
+    protected long mTotal;
     public Request(String method,String url, String postParams, ResponseCallback callback){
         mMethod = method;
         mUrl = url;
@@ -55,7 +56,13 @@ public class Request implements Runnable{
                 if(encoding!=null && encoding.contains("gzip")){
                     is = new GZIPInputStream(is);
                 }
-                mCallback.onSuccess(this,is);
+                if(mCallback instanceof FileResponseCallback){
+                    this.mTotal = conn.getContentLength();
+                    mCallback.onSuccess(this,is);
+                }else{
+                    mCallback.onSuccess(this,is);
+                }
+
             }
 
         } catch (MalformedURLException e) {

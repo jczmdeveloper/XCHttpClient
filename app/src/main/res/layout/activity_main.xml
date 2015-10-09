@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
     <LinearLayout
+        android:id="@+id/ll_0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -62,5 +63,25 @@
             />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@+id/ll_0"
+        >
+        <TextView
+            android:id="@+id/btn_download_File"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:textColor="#FFF"
+            android:layout_weight="1"
+            android:background="#0088FF"
+            android:text="downloadFile"
+            />
+    </LinearLayout>
 
 </RelativeLayout>
