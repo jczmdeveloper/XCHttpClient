@@ -20,6 +20,10 @@ public class Request implements Runnable{
     protected String mPostParams;
     protected ResponseCallback mCallback;
     protected long mTotal;
+    public static class Method{
+        public static final String GET = "GET";
+        public static final String POST = "POST";
+    }
     public Request(String method,String url, String postParams, ResponseCallback callback){
         mMethod = method;
         mUrl = url;
@@ -41,7 +45,7 @@ public class Request implements Runnable{
             conn.setUseCaches(false);
             //设置头参数
             conn.setRequestProperty("Accept-Encoding", "gzip");
-            if(mMethod.equals("POST")){
+            if(mMethod.equals(Method.POST)){
                 conn.setDoOutput(true);
                 os = conn.getOutputStream();
                 if(mCallback instanceof ResponseCallback){

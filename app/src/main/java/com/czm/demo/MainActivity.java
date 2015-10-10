@@ -111,12 +111,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 MainActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mResult.setText(binaryData.toString());
+//                        mResult.setText(binaryData.toString());
                         InputStream is = new ByteArrayInputStream(binaryData);
                         Bitmap bitmap = BitmapFactory.decodeStream(is);
                         mImageView.setImageBitmap(bitmap);
                         mImageView.setVisibility(View.VISIBLE);
-                        Log.v("czm", "result="+binaryData.toString());
+//                        Log.v("czm", "result="+binaryData.toString());
                     }
                 });
             }

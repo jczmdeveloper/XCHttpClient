@@ -26,15 +26,15 @@ public class XCHttpClient {
     }
     public void get(String strUrl, RequestParams params,
                     ResponseCallback callback){
-        sendRequest("GET", getUrlWithQueryString(true, strUrl, null),null, callback);
+        sendRequest(Request.Method.GET, getUrlWithQueryString(true, strUrl, null),null, callback);
     }
     public void post(String strUrl,RequestParams params,
                      ResponseCallback callback){
-        sendRequest("POST", strUrl,getUrlWithQueryString(true, "", params), callback);
+        sendRequest(Request.Method.POST, strUrl,getUrlWithQueryString(true, "", params), callback);
     }
     public void download(String strUrl,RequestParams params,
                     ResponseCallback callback){
-        sendRequest("GET", getUrlWithQueryString(true, strUrl, null),null, callback);
+        sendRequest(Request.Method.GET, getUrlWithQueryString(true, strUrl, null),null, callback);
     }
     private void sendRequest(String method,String strUrl,String postParams, ResponseCallback callback) {
         Request request = new Request(method,strUrl,null,callback);
