@@ -12,7 +12,9 @@ Android Http网络开发框架（非第三方）
 1、请求文本内容：
 
 String url  ="https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/master/data/jsondata.txt";
+
         RequestParams params = new RequestParams();
+        
         params.put("a","3");
         params.put("b",64);
         XCHttpClient.getInstance().post(url, params, new TextResponseCallback() {
@@ -38,6 +40,7 @@ String url  ="https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/maste
 2、请求Json数据：
 
 String url = "https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/master/data/jsondata.txt";
+
         XCHttpClient.getInstance().get(url, null, new JsonResponseCallback<MyJsonData>() {
 
             @Override
@@ -66,12 +69,14 @@ String url = "https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/maste
 3、请求二进制数据：
 
 String url  ="https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/master/screenshots/img1080_1920.jpg";
+
         XCHttpClient.getInstance().get(url, null, new BinaryResponseCallback() {
             @Override
             public void onSuccess(Request request,   final byte[] binaryData) {
                 MainActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                    
 //                        mResult.setText(binaryData.toString());
                         InputStream is = new ByteArrayInputStream(binaryData);
                         Bitmap bitmap = BitmapFactory.decodeStream(is);
@@ -90,6 +95,7 @@ String url  ="https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/maste
 4、下载文件：
 
 String url = "https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/master/screenshots/img2880_5120.jpg";
+
         String targetPath = mContext.getFilesDir().getPath() + "/"+"img01.jpg";
         mDownloading = true;
         XCHttpClient.getInstance().download(url,null,new FileResponseCallback(targetPath){
@@ -108,6 +114,7 @@ String url = "https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/maste
                 mDownloading = false;
             }
 
+
             @Override
             public void onDownloading(final long total, final long current) {
                 MainActivity.this.runOnUiThread(new Runnable() {
@@ -121,6 +128,7 @@ String url = "https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/maste
 5、上传文件：
 
 String url = "http://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/master/data/jsondata.txt";
+
         RequestParams params = new RequestParams();
         String path = mContext.getFilesDir().getPath() + "/"+"img01.jpg";
         File file = new File(path);
@@ -130,6 +138,7 @@ String url = "http://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/master
                 super.onSuccess(request, result);
                 Log.v("czm","upload file completed");
             }
+
 
             @Override
             public void onFailure(Request request, Exception result) {
