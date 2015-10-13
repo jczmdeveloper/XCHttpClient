@@ -77,12 +77,11 @@ String url  ="https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/maste
                     @Override
                     public void run() {
                     
-//                        mResult.setText(binaryData.toString());
                         InputStream is = new ByteArrayInputStream(binaryData);
                         Bitmap bitmap = BitmapFactory.decodeStream(is);
                         mImageView.setImageBitmap(bitmap);
                         mImageView.setVisibility(View.VISIBLE);
-//                        Log.v("czm", "result="+binaryData.toString());
+
                     }
                 });
             }
