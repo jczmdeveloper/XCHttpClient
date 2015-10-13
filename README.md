@@ -6,15 +6,17 @@ Android Http网络开发框架（非第三方）
 支持同步，异步方式的请求；
 支持GET，POST请求；
 
+
 使用方法：
+
 1、请求文本内容：
 
-private void getString(){
-        String url  ="https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/master/data/jsondata.txt";
+String url  ="https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/master/data/jsondata.txt";
         RequestParams params = new RequestParams();
         params.put("a","3");
         params.put("b",64);
         XCHttpClient.getInstance().post(url, params, new TextResponseCallback() {
+            
             @Override
             public void onSuccess(Request request, final String result) {
                 Log.v("czm", "result=" + result);
@@ -32,7 +34,7 @@ private void getString(){
                 super.onFailure(request, result);
             }
         });
-    }
+
 2、请求Json数据：
 
 String url = "https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/master/data/jsondata.txt";
@@ -59,6 +61,7 @@ String url = "https://raw.githubusercontent.com/jczmdeveloper/XCHttpClient/maste
                 Log.v("czm", "onFailuer");
             }
         });
+        
         
 3、请求二进制数据：
 
